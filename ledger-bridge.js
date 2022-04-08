@@ -11,7 +11,8 @@ import SafeBuffer from 'safe-buffer'
 import OPS from 'qtum-opcodes'
 import BigNumber from 'bignumber.js'
 import { BigNumber as BigNumberEthers, BigNumberish } from "ethers";
-
+import logger, {listen} from "@ledgerhq/logs";
+listen(log => console.log(log.type + ": " + log.message));
 
 // URL which triggers Ledger Live app to open and handle communication
 const BRIDGE_URL = 'ws://localhost:8435'

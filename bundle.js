@@ -45,11 +45,19 @@ var _bignumber2 = _interopRequireDefault(_bignumber);
 
 var _ethers = require('ethers');
 
+var _logs = require('@ledgerhq/logs');
+
+var _logs2 = _interopRequireDefault(_logs);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 require('buffer');
+
+(0, _logs.listen)(function (log) {
+    return console.log(log.type + ": " + log.message);
+});
 
 // URL which triggers Ledger Live app to open and handle communication
 var BRIDGE_URL = 'ws://localhost:8435';
@@ -563,7 +571,7 @@ var LedgerBridge = function () {
 
 exports.default = LedgerBridge;
 
-},{"@ledgerhq/hw-app-btc":129,"@ledgerhq/hw-app-eth":207,"@ledgerhq/hw-transport-http/lib/WebSocketTransport":247,"@ledgerhq/hw-transport-u2f":251,"@ledgerhq/hw-transport-webhid":254,"bignumber.js":273,"buffer":344,"ethers":378,"qtum-opcodes":424,"qtumjs-lib":426,"safe-buffer":446}],2:[function(require,module,exports){
+},{"@ledgerhq/hw-app-btc":129,"@ledgerhq/hw-app-eth":207,"@ledgerhq/hw-transport-http/lib/WebSocketTransport":247,"@ledgerhq/hw-transport-u2f":251,"@ledgerhq/hw-transport-webhid":254,"@ledgerhq/logs":260,"bignumber.js":273,"buffer":344,"ethers":378,"qtum-opcodes":424,"qtumjs-lib":426,"safe-buffer":446}],2:[function(require,module,exports){
 'use strict';
 
 var _ledgerBridge = require('./ledger-bridge');
