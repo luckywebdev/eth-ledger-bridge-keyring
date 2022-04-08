@@ -21347,7 +21347,8 @@ function hashOutputFull(transport, outputScript, additionals) {
                     ///WARNING: Decred works only with one call (without chunking)
                     //TODO: test without this for Decred
                     if (isDecred) {
-                        return [2 /*return*/, transport.send(0xe0, 0x4a, p1, 0x00, outputScript)];
+                        // return [2 /*return*/, transport.send(0xe0, 0x4a, p1, 0x00, outputScript)];
+                        return [2 /*return*/, transport.send(0xe0, 0x44, p1, 0x00, outputScript)];
                     }
                     _a.label = 1;
                 case 1:
@@ -21357,7 +21358,8 @@ function hashOutputFull(transport, outputScript, additionals) {
                         : constants_1.MAX_SCRIPT_BLOCK;
                     p1_1 = offset + blockSize === outputScript.length ? 0x80 : 0x00;
                     data = outputScript.slice(offset, offset + blockSize);
-                    return [4 /*yield*/, transport.send(0xe0, 0x4a, p1_1, 0x00, data)];
+                    // return [4 /*yield*/, transport.send(0xe0, 0x4a, p1_1, 0x00, data)];
+                    return [4 /*yield*/, transport.send(0xe0, 0x44, p1_1, 0x00, data)];
                 case 2:
                     _a.sent();
                     offset += blockSize;
