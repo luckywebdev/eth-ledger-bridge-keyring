@@ -19935,7 +19935,7 @@ var psbtExtractor_1 = require("./newops/psbtExtractor");
 var psbtFinalizer_1 = require("./newops/psbtFinalizer");
 var psbtv2_1 = require("./newops/psbtv2");
 var serializeTransaction_1 = require("./serializeTransaction");
-var newSupportedApps = ["Bitcoin", "Bitcoin Test", "Qtum"];
+var newSupportedApps = ["Bitcoin", "Bitcoin Test"];
 function canSupportApp(appAndVersion) {
     return (newSupportedApps.includes(appAndVersion.name) &&
         semver_1["default"].major(appAndVersion.version) >= 2);
